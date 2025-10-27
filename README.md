@@ -132,6 +132,15 @@ async def lm_launch():
     )
   return JSONResponse(status_code=r.status_code, content=r.json())
 ```
+## 5) Post-Import Redirect  
+After the user submits or validates data, **Locimapper automatically redirects back** to the **Redirect URL** you configured in the **Integration Settings**.  
+
+- The redirect includes the **status code** of your API call to indicate success or failure.  
+- Your backend can use this status to confirm the operation or trigger any follow-up actions.  
+
+**Example:**
+- https://your-redirect-url.com?status=200
+
 
 ---
 

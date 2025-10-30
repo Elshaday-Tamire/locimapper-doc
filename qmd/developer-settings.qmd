@@ -1,0 +1,25 @@
+---
+title: "Developer Settings"
+---
+
+## Create an App Credentials
+
+After logging in at [locimapper.com](https://locimapper.com), you can create an application credential that connects your system to the Locimapper platform.
+
+1. Go to **Side menu → Developer Settings**  
+
+2. Click **New App** to create a new application.  
+
+3. Configure **Branding** to match your product’s style and colors.  
+   This makes your hosted import and validation pages look native.
+
+![](../images/branding.png){fig-align="center" width="750"}
+
+To help you understand how each color applies within the modal, the following illustration highlights each color zone.
+
+![](../images/branding-arrows.png){fig-align="center" width="750"}
+
+::: callout-tip
+Rotate your Client Secret regularly or whenever you suspect a leak.
+:::
+

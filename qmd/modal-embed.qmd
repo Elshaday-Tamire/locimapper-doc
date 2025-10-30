@@ -1,0 +1,41 @@
+---
+title: "Modal Embed (iframe)"
+---
+
+You can open the `frontend_url` directly or inside a modal iframe.
+
+**Recommended size:** `{ w: 900, h: 700 }`
+
+### Minimal HTML/JS
+```html
+<!doctype html>
+<html>
+<body>
+  <button id="open">Open Import</button>
+
+  <div id="backdrop" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.4);align-items:center;justify-content:center;">
+    <div style="background:#fff;position:relative;padding:8px;border-radius:8px;">
+      <button onclick="closeModal()" style="position:absolute;top:8px;right:8px;">✕</button>
+      <iframe id="lm-frame" width="900" height="700" style="border:0"></iframe>
+    </div>
+  </div>
+
+  <script>
+    async function getFrontendUrl() {
+      const res = await fetch('/api/locimapper/launch', { method: 'POST' });
+      const { frontend_url } = await res.json();
+      return frontend_url;
+    }
+    function openModal(url) {
+      document.getElementById('lm-frame').src = url;
+      document.getElementById('backdrop').style.display = 'flex';
+    }
+    function closeModal() {
+      document.getElementById('lm-frame').src = 'about:blank';
+      document.getElementById('backdrop').style.display = 'none';
+    }
+    document.getElementById('open').onclick = async () => openModal(await getFrontendUrl());
+  </script>
+</body>
+</html>
+```

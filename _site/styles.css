@@ -1,0 +1,5 @@
+/* Optional custom tweaks */
+:root[data-theme="dark"] body {
+  background: #0f1116;
+}
+img, iframe { max-width: 100%; }

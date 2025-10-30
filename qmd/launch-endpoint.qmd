@@ -1,0 +1,41 @@
+---
+title: "Launch Endpoint"
+---
+
+Your backend calls this endpoint to receive a **single-use, short-lived** URL for the hosted Import/Validator page.
+
+### Endpoint
+```json
+POST https://locimapper.com:8443/accounts/integrations/launch
+```
+
+### Request (JSON)
+```json
+{
+  "client_id": "YOUR_CLIENT_ID",
+  "client_secret": "YOUR_CLIENT_SECRET",
+  "integration_id": "YOUR_INTEGRATION_ID"
+}
+```
+
+### Successful Response (200)
+```json
+{
+  "frontend_url": "https://locimapper.com/import-standalone#<short-lived-token>"
+}
+```
+
+**Notes**
+- Token appears in the **URL fragment** (after `#`), **single-use** and **short-lived**.
+- Typical error: **422** (validation error) with details.
+
+### Sample cURL
+```bash
+curl -X POST https://locimapper.com:8443/accounts/integrations/launch   
+     -H "Content-Type: application/json"   
+     -d '{
+          "client_id":"YOUR_CLIENT_ID",
+          "client_secret":"YOUR_CLIENT_SECRET",
+          "integration_id":"YOUR_INTEGRATION_ID"
+        }'
+```

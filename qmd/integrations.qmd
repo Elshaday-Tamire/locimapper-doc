@@ -1,0 +1,72 @@
+---
+title: "Integrations"
+---
+
+## Create an Integration
+
+From the **Developer Settings → Integrations** tab, click **New Integration** to connect Locimapper with an external API or service.  
+You’ll be guided through three configuration steps: **Basic**, **Settings**, and **Behavior**.
+
+---
+
+### Step 1: Basic Configuration
+![](../images/integration-basic.png){fig-align="center" width="750"}
+
+1. Select an **App** from your existing Locimapper applications.  
+2. Enter a descriptive **Integration Name** (for example, “Salesforce Import”).  
+3. Optionally add a **Description** to explain the purpose of this integration.  
+4. Choose a **Schema** to define the data structure this integration supports.  
+5. Provide a **Redirect URL** — the page your users return to after data submission (for example, `https://yourapp.com/oauth/callback`).
+
+---
+
+### Step 2: API Settings
+![](../images/integration-settings.png){fig-align="center" width="750"}
+
+In this step, you configure how Locimapper sends validated data to your external service.
+
+1. **API Endpoint** — Enter the destination URL where the data should be delivered.  
+   Example:  
+   ```json
+   https://api.yourservice.com/ingest?param1=foo&param2=bar
+   ```
+
+2. **API Headers** — Add authentication and content-type headers that your endpoint requires.  
+   Example:  
+   ```json
+   {
+     "Authorization": "Bearer <token>",
+     "Content-Type": "application/json"
+   }
+   ```
+
+3. **Example JSON Request Body** — Once a schema is selected, Locimapper automatically displays a sample JSON payload showing the structure of validated data that will be sent to your API.
+
+4. **HTTP Method** — Choose the method your endpoint expects, such as `POST` or `PUT`.
+
+> These settings define the connection between Locimapper’s data validator and your backend service, ensuring data is transmitted securely and in the expected format.
+
+---
+
+### Step 3: Behavior Settings
+![](../images/integration-behavior.png){fig-align="center" width="750"}
+
+Define how data submission should behave when users upload and validate data.
+
+- **Require All Valid Rows** — Blocks submission if any row fails validation.  
+- **Allow Partial Submission** — Submits only valid rows, skipping invalid ones.  
+
+This setting provides flexibility depending on whether complete data integrity or partial acceptance is preferred.
+
+---
+
+## Post-Import Redirect
+
+After users complete their import or validation process, Locimapper automatically redirects the browser to the configured **Redirect URL** and appends a `status` query parameter to indicate the result.
+
+**Example**
+```json
+https://yourapp.com/oauth/callback?status=200
+```
+
+> You can use this status code in your backend to confirm a successful submission or handle errors gracefully.

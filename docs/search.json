@@ -24,45 +24,57 @@
   {
     "objectID": "qmd/integrations.html",
     "href": "qmd/integrations.html",
-    "title": "Integrations",
+    "title": "Locimapper Developer Docs",
     "section": "",
     "text": "From the Developer Settings → Integrations tab, click New Integration to connect Locimapper with an external API or service.\nYou’ll be guided through three configuration steps: Basic, Settings, and Behavior.\n\n\n\n\n\n\n\n\n\nSelect an App from your existing Locimapper applications.\n\nEnter a descriptive Integration Name (for example, “Salesforce Import”).\n\nOptionally add a Description to explain the purpose of this integration.\n\nChoose a Schema to define the data structure this integration supports.\n\nProvide a Redirect URL — the page your users return to after data submission (for example, https://yourapp.com/oauth/callback).\n\n\n\n\n\n\n\n\n\n\nIn this step, you configure how Locimapper sends validated data to your external service.\n\nAPI Endpoint — Enter the destination URL where the data should be delivered.\nExample:\nhttps://api.yourservice.com/ingest?param1=foo&param2=bar\nAPI Headers — Add authentication and content-type headers that your endpoint requires.\nExample:\n{\n  \"Authorization\": \"Bearer &lt;token&gt;\",\n  \"Content-Type\": \"application/json\"\n}\nExample JSON Request Body — Once a schema is selected, Locimapper automatically displays a sample JSON payload showing the structure of validated data that will be sent to your API.\nHTTP Method — Choose the method your endpoint expects, such as POST or PUT.\n\n\nThese settings define the connection between Locimapper’s data validator and your backend service, ensuring data is transmitted securely and in the expected format.\n\n\n\n\n\n\n\n\n\n\nDefine how data submission should behave when users upload and validate data.\n\nRequire All Valid Rows — Blocks submission if any row fails validation.\n\nAllow Partial Submission — Submits only valid rows, skipping invalid ones.\n\nThis setting provides flexibility depending on whether complete data integrity or partial acceptance is preferred.",
     "crumbs": [
       "GitHub",
       "Setup",
-      "Integrations"
+      "Create an Integration"
     ]
   },
   {
     "objectID": "qmd/integrations.html#create-an-integration",
     "href": "qmd/integrations.html#create-an-integration",
-    "title": "Integrations",
+    "title": "Locimapper Developer Docs",
     "section": "",
     "text": "From the Developer Settings → Integrations tab, click New Integration to connect Locimapper with an external API or service.\nYou’ll be guided through three configuration steps: Basic, Settings, and Behavior.\n\n\n\n\n\n\n\n\n\nSelect an App from your existing Locimapper applications.\n\nEnter a descriptive Integration Name (for example, “Salesforce Import”).\n\nOptionally add a Description to explain the purpose of this integration.\n\nChoose a Schema to define the data structure this integration supports.\n\nProvide a Redirect URL — the page your users return to after data submission (for example, https://yourapp.com/oauth/callback).\n\n\n\n\n\n\n\n\n\n\nIn this step, you configure how Locimapper sends validated data to your external service.\n\nAPI Endpoint — Enter the destination URL where the data should be delivered.\nExample:\nhttps://api.yourservice.com/ingest?param1=foo&param2=bar\nAPI Headers — Add authentication and content-type headers that your endpoint requires.\nExample:\n{\n  \"Authorization\": \"Bearer &lt;token&gt;\",\n  \"Content-Type\": \"application/json\"\n}\nExample JSON Request Body — Once a schema is selected, Locimapper automatically displays a sample JSON payload showing the structure of validated data that will be sent to your API.\nHTTP Method — Choose the method your endpoint expects, such as POST or PUT.\n\n\nThese settings define the connection between Locimapper’s data validator and your backend service, ensuring data is transmitted securely and in the expected format.\n\n\n\n\n\n\n\n\n\n\nDefine how data submission should behave when users upload and validate data.\n\nRequire All Valid Rows — Blocks submission if any row fails validation.\n\nAllow Partial Submission — Submits only valid rows, skipping invalid ones.\n\nThis setting provides flexibility depending on whether complete data integrity or partial acceptance is preferred.",
     "crumbs": [
       "GitHub",
       "Setup",
-      "Integrations"
+      "Create an Integration"
     ]
   },
   {
     "objectID": "qmd/integrations.html#post-import-redirect",
     "href": "qmd/integrations.html#post-import-redirect",
-    "title": "Integrations",
+    "title": "Locimapper Developer Docs",
     "section": "Post-Import Redirect",
     "text": "Post-Import Redirect\nAfter users complete their import or validation process, Locimapper automatically redirects the browser to the configured Redirect URL and appends a status query parameter to indicate the result.\nExample\nhttps://yourapp.com/oauth/callback?status=200\n\nYou can use this status code in your backend to confirm a successful submission or handle errors gracefully.",
     "crumbs": [
       "GitHub",
       "Setup",
-      "Integrations"
+      "Create an Integration"
     ]
   },
   {
     "objectID": "qmd/modal-embed.html",
     "href": "qmd/modal-embed.html",
-    "title": "Modal Embed (iframe)",
+    "title": "Locimapper Developer Docs",
     "section": "",
-    "text": "You can open the frontend_url directly or inside a modal iframe.\nRecommended size: { w: 900, h: 700 }\n\nMinimal HTML/JS\n&lt;!doctype html&gt;\n&lt;html&gt;\n&lt;body&gt;\n  &lt;button id=\"open\"&gt;Open Import&lt;/button&gt;\n\n  &lt;div id=\"backdrop\" style=\"display:none;position:fixed;inset:0;background:rgba(0,0,0,.4);align-items:center;justify-content:center;\"&gt;\n    &lt;div style=\"background:#fff;position:relative;padding:8px;border-radius:8px;\"&gt;\n      &lt;button onclick=\"closeModal()\" style=\"position:absolute;top:8px;right:8px;\"&gt;✕&lt;/button&gt;\n      &lt;iframe id=\"lm-frame\" width=\"900\" height=\"700\" style=\"border:0\"&gt;&lt;/iframe&gt;\n    &lt;/div&gt;\n  &lt;/div&gt;\n\n  &lt;script&gt;\n    async function getFrontendUrl() {\n      const res = await fetch('/api/locimapper/launch', { method: 'POST' });\n      const { frontend_url } = await res.json();\n      return frontend_url;\n    }\n    function openModal(url) {\n      document.getElementById('lm-frame').src = url;\n      document.getElementById('backdrop').style.display = 'flex';\n    }\n    function closeModal() {\n      document.getElementById('lm-frame').src = 'about:blank';\n      document.getElementById('backdrop').style.display = 'none';\n    }\n    document.getElementById('open').onclick = async () =&gt; openModal(await getFrontendUrl());\n  &lt;/script&gt;\n&lt;/body&gt;\n&lt;/html&gt;",
+    "text": "You can open the frontend_url directly or inside a modal iframe.\nRecommended size: { w: 900, h: 700 }\n\n\n&lt;!doctype html&gt;\n&lt;html&gt;\n&lt;body&gt;\n  &lt;button id=\"open\"&gt;Open Import&lt;/button&gt;\n\n  &lt;div id=\"backdrop\" style=\"display:none;position:fixed;inset:0;background:rgba(0,0,0,.4);align-items:center;justify-content:center;\"&gt;\n    &lt;div style=\"background:#fff;position:relative;padding:8px;border-radius:8px;\"&gt;\n      &lt;button onclick=\"closeModal()\" style=\"position:absolute;top:8px;right:8px;\"&gt;✕&lt;/button&gt;\n      &lt;iframe id=\"lm-frame\" width=\"900\" height=\"700\" style=\"border:0\"&gt;&lt;/iframe&gt;\n    &lt;/div&gt;\n  &lt;/div&gt;\n\n  &lt;script&gt;\n    async function getFrontendUrl() {\n      const res = await fetch('/api/locimapper/launch', { method: 'POST' });\n      const { frontend_url } = await res.json();\n      return frontend_url;\n    }\n    function openModal(url) {\n      document.getElementById('lm-frame').src = url;\n      document.getElementById('backdrop').style.display = 'flex';\n    }\n    function closeModal() {\n      document.getElementById('lm-frame').src = 'about:blank';\n      document.getElementById('backdrop').style.display = 'none';\n    }\n    document.getElementById('open').onclick = async () =&gt; openModal(await getFrontendUrl());\n  &lt;/script&gt;\n&lt;/body&gt;\n&lt;/html&gt;",
+    "crumbs": [
+      "GitHub",
+      "Embedding & APIs",
+      "Modal Embed (iframe)"
+    ]
+  },
+  {
+    "objectID": "qmd/modal-embed.html#modal-embed-iframe",
+    "href": "qmd/modal-embed.html#modal-embed-iframe",
+    "title": "Locimapper Developer Docs",
+    "section": "",
+    "text": "You can open the frontend_url directly or inside a modal iframe.\nRecommended size: { w: 900, h: 700 }\n\n\n&lt;!doctype html&gt;\n&lt;html&gt;\n&lt;body&gt;\n  &lt;button id=\"open\"&gt;Open Import&lt;/button&gt;\n\n  &lt;div id=\"backdrop\" style=\"display:none;position:fixed;inset:0;background:rgba(0,0,0,.4);align-items:center;justify-content:center;\"&gt;\n    &lt;div style=\"background:#fff;position:relative;padding:8px;border-radius:8px;\"&gt;\n      &lt;button onclick=\"closeModal()\" style=\"position:absolute;top:8px;right:8px;\"&gt;✕&lt;/button&gt;\n      &lt;iframe id=\"lm-frame\" width=\"900\" height=\"700\" style=\"border:0\"&gt;&lt;/iframe&gt;\n    &lt;/div&gt;\n  &lt;/div&gt;\n\n  &lt;script&gt;\n    async function getFrontendUrl() {\n      const res = await fetch('/api/locimapper/launch', { method: 'POST' });\n      const { frontend_url } = await res.json();\n      return frontend_url;\n    }\n    function openModal(url) {\n      document.getElementById('lm-frame').src = url;\n      document.getElementById('backdrop').style.display = 'flex';\n    }\n    function closeModal() {\n      document.getElementById('lm-frame').src = 'about:blank';\n      document.getElementById('backdrop').style.display = 'none';\n    }\n    document.getElementById('open').onclick = async () =&gt; openModal(await getFrontendUrl());\n  &lt;/script&gt;\n&lt;/body&gt;\n&lt;/html&gt;",
     "crumbs": [
       "GitHub",
       "Embedding & APIs",
@@ -72,31 +84,43 @@
   {
     "objectID": "qmd/developer-settings.html",
     "href": "qmd/developer-settings.html",
-    "title": "Developer Settings",
+    "title": "Locimapper Developer Docs",
     "section": "",
-    "text": "After logging in at locimapper.com, you can create an application credential that connects your system to the Locimapper platform.\n\nGo to Side menu → Developer Settings\nClick New App to create a new application.\nConfigure Branding to match your product’s style and colors.\nThis makes your hosted import and validation pages look native.\n\n\n\n\n\n\nTo help you understand how each color applies within the modal, the following illustration highlights each color zone.\n\n\n\n\n\n\n\n\n\n\n\nTip\n\n\n\nRotate your Client Secret regularly or whenever you suspect a leak.",
+    "text": "After logging in at locimapper.com, you can create an application credential that connects your system to the Locimapper platform.\n\nGo to Side menu → Developer Settings\nUnder Credentials tab click Create credential to create a new application.\nConfigure Branding to match your product’s style and colors.\nThis makes your hosted import and validation pages look native.\n\n\n\n\n\n\nTo help you understand how each color applies within the modal, the following illustration highlights each color zone.\n\n\n\n\n\n\n\n\n\n\n\nTip\n\n\n\nRotate your Client Secret regularly or whenever you suspect a leak.",
     "crumbs": [
       "GitHub",
       "Setup",
-      "Developer Settings"
+      "Create an App Credentials"
     ]
   },
   {
     "objectID": "qmd/developer-settings.html#create-an-app-credentials",
     "href": "qmd/developer-settings.html#create-an-app-credentials",
-    "title": "Developer Settings",
+    "title": "Locimapper Developer Docs",
     "section": "",
-    "text": "After logging in at locimapper.com, you can create an application credential that connects your system to the Locimapper platform.\n\nGo to Side menu → Developer Settings\nClick New App to create a new application.\nConfigure Branding to match your product’s style and colors.\nThis makes your hosted import and validation pages look native.\n\n\n\n\n\n\nTo help you understand how each color applies within the modal, the following illustration highlights each color zone.\n\n\n\n\n\n\n\n\n\n\n\nTip\n\n\n\nRotate your Client Secret regularly or whenever you suspect a leak.",
+    "text": "After logging in at locimapper.com, you can create an application credential that connects your system to the Locimapper platform.\n\nGo to Side menu → Developer Settings\nUnder Credentials tab click Create credential to create a new application.\nConfigure Branding to match your product’s style and colors.\nThis makes your hosted import and validation pages look native.\n\n\n\n\n\n\nTo help you understand how each color applies within the modal, the following illustration highlights each color zone.\n\n\n\n\n\n\n\n\n\n\n\nTip\n\n\n\nRotate your Client Secret regularly or whenever you suspect a leak.",
     "crumbs": [
       "GitHub",
       "Setup",
-      "Developer Settings"
+      "Create an App Credentials"
     ]
   },
   {
     "objectID": "qmd/security.html",
     "href": "qmd/security.html",
-    "title": "Security",
+    "title": "Locimapper Developer Docs",
+    "section": "",
+    "text": "Never expose client_secret in frontend code or logs.\nCall the launcher only from your backend.\nTreat the returned URL as single-use and short-lived; fetch a new one per session.\nStore credentials in a secret manager; rotate on compromise.",
+    "crumbs": [
+      "GitHub",
+      "Reference",
+      "Security"
+    ]
+  },
+  {
+    "objectID": "qmd/security.html#security",
+    "href": "qmd/security.html#security",
+    "title": "Locimapper Developer Docs",
     "section": "",
     "text": "Never expose client_secret in frontend code or logs.\nCall the launcher only from your backend.\nTreat the returned URL as single-use and short-lived; fetch a new one per session.\nStore credentials in a secret manager; rotate on compromise.",
     "crumbs": [
@@ -108,9 +132,21 @@
   {
     "objectID": "qmd/launch-endpoint.html",
     "href": "qmd/launch-endpoint.html",
-    "title": "Launch Endpoint",
+    "title": "Locimapper Developer Docs",
     "section": "",
-    "text": "Your backend calls this endpoint to receive a single-use, short-lived URL for the hosted Import/Validator page.\n\nEndpoint\nPOST https://locimapper.com:8443/accounts/integrations/launch\n\n\nRequest (JSON)\n{\n  \"client_id\": \"YOUR_CLIENT_ID\",\n  \"client_secret\": \"YOUR_CLIENT_SECRET\",\n  \"integration_id\": \"YOUR_INTEGRATION_ID\"\n}\n\n\nSuccessful Response (200)\n{\n  \"frontend_url\": \"https://locimapper.com/import-standalone#&lt;short-lived-token&gt;\"\n}\nNotes - Token appears in the URL fragment (after #), single-use and short-lived. - Typical error: 422 (validation error) with details.\n\n\nSample cURL\ncurl -X POST https://locimapper.com:8443/accounts/integrations/launch   \n     -H \"Content-Type: application/json\"   \n     -d '{\n          \"client_id\":\"YOUR_CLIENT_ID\",\n          \"client_secret\":\"YOUR_CLIENT_SECRET\",\n          \"integration_id\":\"YOUR_INTEGRATION_ID\"\n        }'",
+    "text": "Your backend calls this endpoint to receive a single-use, short-lived URL for the hosted Import/Validator page.\n\n\nPOST https://locimapper.com:8443/accounts/integrations/launch\n\n\n\n{\n  \"client_id\": \"YOUR_CLIENT_ID\",\n  \"client_secret\": \"YOUR_CLIENT_SECRET\",\n  \"integration_id\": \"YOUR_INTEGRATION_ID\"\n}\n\n\n\n{\n  \"frontend_url\": \"https://locimapper.com/import-standalone#&lt;short-lived-token&gt;\"\n}\nNotes - Token appears in the URL fragment (after #), single-use and short-lived. - Typical error: 422 (validation error) with details.\n\n\n\ncurl -X POST https://locimapper.com:8443/accounts/integrations/launch   \n     -H \"Content-Type: application/json\"   \n     -d '{\n          \"client_id\":\"YOUR_CLIENT_ID\",\n          \"client_secret\":\"YOUR_CLIENT_SECRET\",\n          \"integration_id\":\"YOUR_INTEGRATION_ID\"\n        }'",
+    "crumbs": [
+      "GitHub",
+      "Embedding & APIs",
+      "Launch Endpoint"
+    ]
+  },
+  {
+    "objectID": "qmd/launch-endpoint.html#launch-endpoint",
+    "href": "qmd/launch-endpoint.html#launch-endpoint",
+    "title": "Locimapper Developer Docs",
+    "section": "",
+    "text": "Your backend calls this endpoint to receive a single-use, short-lived URL for the hosted Import/Validator page.\n\n\nPOST https://locimapper.com:8443/accounts/integrations/launch\n\n\n\n{\n  \"client_id\": \"YOUR_CLIENT_ID\",\n  \"client_secret\": \"YOUR_CLIENT_SECRET\",\n  \"integration_id\": \"YOUR_INTEGRATION_ID\"\n}\n\n\n\n{\n  \"frontend_url\": \"https://locimapper.com/import-standalone#&lt;short-lived-token&gt;\"\n}\nNotes - Token appears in the URL fragment (after #), single-use and short-lived. - Typical error: 422 (validation error) with details.\n\n\n\ncurl -X POST https://locimapper.com:8443/accounts/integrations/launch   \n     -H \"Content-Type: application/json\"   \n     -d '{\n          \"client_id\":\"YOUR_CLIENT_ID\",\n          \"client_secret\":\"YOUR_CLIENT_SECRET\",\n          \"integration_id\":\"YOUR_INTEGRATION_ID\"\n        }'",
     "crumbs": [
       "GitHub",
       "Embedding & APIs",

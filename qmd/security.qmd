@@ -1,7 +1,4 @@
----
-title: "Security"
----
-
+## Security
 - Never expose **client_secret** in frontend code or logs.
 - Call the launcher **only** from your backend.
 - Treat the returned URL as **single-use** and short-lived; fetch a new one per session.

@@ -1,6 +1,4 @@
----
-title: "Modal Embed (iframe)"
----
+## Modal Embed (iframe)
 
 You can open the `frontend_url` directly or inside a modal iframe.
 

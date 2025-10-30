@@ -1,7 +1,3 @@
----
-title: "Integrations"
----
-
 ## Create an Integration
 
 From the **Developer Settings → Integrations** tab, click **New Integration** to connect Locimapper with an external API or service.  

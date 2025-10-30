@@ -1,6 +1,4 @@
----
-title: "Launch Endpoint"
----
+## Launch Endpoint
 
 Your backend calls this endpoint to receive a **single-use, short-lived** URL for the hosted Import/Validator page.
 

@@ -27,19 +27,38 @@ In this step, you configure how Locimapper sends validated data to your external
    https://api.yourservice.com/ingest?param1=foo&param2=bar
    ```
 
-2. **API Headers** — Add authentication and content-type headers that your endpoint requires.  
-   Example:  
-   ```json
-   {
-     "Authorization": "Bearer <token>",
-     "Content-Type": "application/json"
-   }
-   ```
+2. **API Headers** — (optional) Add authentication and content-type headers that your endpoint requires. If your headers include dynamic values (for example per-user Authorization tokens), prefer leaving them out of the static integration and supply them at launch time using the Launch API `overrides` (use the `api_header` object to replace headers for a single launch). See the Launch Endpoint docs for details: [Launch Endpoint](../qmd/launch-endpoint.html#launch-endpoint).
 
 3. **Example JSON Request Body** — Once a schema is selected, Locimapper automatically displays a sample JSON payload showing the structure of validated data that will be sent to your API.
 
 4. **HTTP Method** — Choose the method your endpoint expects, such as `POST` or `PUT`.
 
+::: callout-tip
+If your endpoint requires per-launch values (for example a user-specific path segment or runtime query parameters), use a templated endpoint with placeholders written as `{name}` in the API Endpoint field.
+
+Examples
+
+- Path placeholder (values are URL-quoted):
+
+```text
+https://api.yourservice.com/{user_id}/ingest
+```
+
+- Query placeholder (values are URL-encoded):
+
+```text
+https://api.yourservice.com/ingest?param1={foo}&param2={bar}
+```
+
+Rules & tips
+
+- Use curly braces around the placeholder name (for example `{user_id}`).
+- Placeholder names must match keys you provide in the `overrides` object exactly; unknown keys are rejected.
+- If headers are constant for all launches you can store them here as static headers. To replace headers for a single launch, include an `api_header` object in the `overrides` object when calling the Launch API.
+- If you supply `overrides`, you must provide values for all placeholders used in the template.
+
+To learn how to include `overrides` in the launch request and the exact validation rules, see the Launch Endpoint documentation: [Launch Endpoint](../qmd/launch-endpoint.html#launch-endpoint).
+:::
 > These settings define the connection between Locimapper’s data validator and your backend service, ensuring data is transmitted securely and in the expected format.
 
 ---

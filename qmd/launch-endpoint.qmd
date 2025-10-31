@@ -16,16 +16,44 @@ POST https://locimapper.com:8443/accounts/integrations/launch
 }
 ```
 
+You may optionally include an `overrides` object in the launch request to provide per-launch values for templated endpoints and to replace stored headers for that launch. When present, the `overrides` key sits alongside the authentication and integration fields in the same request body.
+
+Example launch request with optional `overrides`:
+
+```json
+{
+  "client_id": "YOUR_CLIENT_ID",
+  "client_secret": "YOUR_CLIENT_SECRET",
+  "integration_id": "YOUR_INTEGRATION_ID",
+  "overrides": {
+    "user_id": "value",
+    "foo": "value",
+    "bar": "value",
+    "api_header": {
+      "Accept": "application/json",
+      "Content-Type": "application/json",
+      "Authorization": "Bearer abcdef..."
+    }
+  }
+}
+```
+
+Notes and validation rules for `overrides`:
+
+- The `overrides` object may contain keys that match placeholders used in the integration's `api_endpoint` template (placeholders are written with curly braces `{}` in the integration). Keys must match placeholder names exactly; unknown keys that are not present in the template will be rejected.
+- To replace stored headers for a single launch, include an `api_header` object inside `overrides`; it must be a JSON object mapping header names to string values. The `api_header` override replaces stored headers entirely (no merging).
+- `api_header` must contain only string values; non-string header values are rejected.
+- If you provide `overrides` for placeholders, you must supply values for all placeholders used in the template; otherwise the request will be rejected.
+- Tokens/overrides are validated server-side and invalid shapes or missing values will return a 400 error on launch.
+
+For more usage examples and responses, see the examples later in this page.
+
 ### Successful Response (200)
 ```json
 {
   "frontend_url": "https://locimapper.com/import-standalone#<short-lived-token>"
 }
 ```
-
-**Notes**
-- Token appears in the **URL fragment** (after `#`), **single-use** and **short-lived**.
-- Typical error: **422** (validation error) with details.
 
 ### Sample cURL
 ```bash

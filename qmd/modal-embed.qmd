@@ -2,7 +2,17 @@
 
 You can open the `frontend_url` directly or inside a modal iframe.
 
-**Recommended size:** `{ w: 900, h: 700 }`
+### Note on iframe usage
+
+Don't forget to include the sandbox attribute (sandbox="allow-scripts allow-top-navigation-by-user-activation") so the embedded page can redirect the top-level window.
+```html
+<iframe
+  src="FRONTEND_URL"
+  width="900"
+  height="700"
+  sandbox="allow-scripts allow-top-navigation-by-user-activation"
+></iframe>
+```
 
 ### Minimal HTML/JS
 ```html
@@ -14,7 +24,7 @@ You can open the `frontend_url` directly or inside a modal iframe.
   <div id="backdrop" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.4);align-items:center;justify-content:center;">
     <div style="background:#fff;position:relative;padding:8px;border-radius:8px;">
       <button onclick="closeModal()" style="position:absolute;top:8px;right:8px;">✕</button>
-      <iframe id="lm-frame" width="900" height="700" style="border:0"></iframe>
+  <iframe id="lm-frame" width="900" height="700" style="border:0" sandbox="allow-scripts allow-top-navigation-by-user-activation"></iframe>
     </div>
   </div>
 
@@ -37,3 +47,6 @@ You can open the `frontend_url` directly or inside a modal iframe.
 </body>
 </html>
 ```
+::: callout-tip
+**Recommended size:** `{ w: 900, h: 700 }`
+:::

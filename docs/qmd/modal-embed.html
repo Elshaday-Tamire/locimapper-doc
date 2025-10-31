@@ -266,6 +266,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul>
   <li><a href="#modal-embed-iframe" id="toc-modal-embed-iframe" class="nav-link active" data-scroll-target="#modal-embed-iframe">Modal Embed (iframe)</a>
   <ul class="collapse">
+  <li><a href="#note-on-iframe-usage" id="toc-note-on-iframe-usage" class="nav-link" data-scroll-target="#note-on-iframe-usage">Note on iframe usage</a></li>
   <li><a href="#minimal-htmljs" id="toc-minimal-htmljs" class="nav-link" data-scroll-target="#minimal-htmljs">Minimal HTML/JS</a></li>
   </ul></li>
   </ul>
@@ -280,39 +281,61 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="modal-embed-iframe" class="level2">
 <h2 class="anchored" data-anchor-id="modal-embed-iframe">Modal Embed (iframe)</h2>
 <p>You can open the <code>frontend_url</code> directly or inside a modal iframe.</p>
-<p><strong>Recommended size:</strong> <code>{ w: 900, h: 700 }</code></p>
+<section id="note-on-iframe-usage" class="level3">
+<h3 class="anchored" data-anchor-id="note-on-iframe-usage">Note on iframe usage</h3>
+<p>Don’t forget to include the sandbox attribute (sandbox=“allow-scripts allow-top-navigation-by-user-activation”) so the embedded page can redirect the top-level window.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">iframe</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="ot">  src</span><span class="op">=</span><span class="st">"FRONTEND_URL"</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="ot">  width</span><span class="op">=</span><span class="st">"900"</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="ot">  height</span><span class="op">=</span><span class="st">"700"</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="ot">  sandbox</span><span class="op">=</span><span class="st">"allow-scripts allow-top-navigation-by-user-activation"</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="dt">&gt;&lt;/</span><span class="kw">iframe</span><span class="dt">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
 <section id="minimal-htmljs" class="level3">
 <h3 class="anchored" data-anchor-id="minimal-htmljs">Minimal HTML/JS</h3>
-<div class="sourceCode" id="cb1"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;!doctype</span> html<span class="dt">&gt;</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">html</span><span class="dt">&gt;</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">body</span><span class="dt">&gt;</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&lt;</span><span class="kw">button</span><span class="ot"> id</span><span class="op">=</span><span class="st">"open"</span><span class="dt">&gt;</span>Open Import<span class="dt">&lt;/</span><span class="kw">button</span><span class="dt">&gt;</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&lt;</span><span class="kw">div</span><span class="ot"> id</span><span class="op">=</span><span class="st">"backdrop"</span><span class="ot"> style</span><span class="op">=</span><span class="st">"display:none;position:fixed;inset:0;background:rgba(0,0,0,.4);align-items:center;justify-content:center;"</span><span class="dt">&gt;</span></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">div</span><span class="ot"> style</span><span class="op">=</span><span class="st">"background:#fff;position:relative;padding:8px;border-radius:8px;"</span><span class="dt">&gt;</span></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>      <span class="dt">&lt;</span><span class="kw">button</span><span class="ot"> onclick</span><span class="op">=</span><span class="st">"closeModal()"</span><span class="ot"> style</span><span class="op">=</span><span class="st">"position:absolute;top:8px;right:8px;"</span><span class="dt">&gt;</span>✕<span class="dt">&lt;/</span><span class="kw">button</span><span class="dt">&gt;</span></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>      <span class="dt">&lt;</span><span class="kw">iframe</span><span class="ot"> id</span><span class="op">=</span><span class="st">"lm-frame"</span><span class="ot"> width</span><span class="op">=</span><span class="st">"900"</span><span class="ot"> height</span><span class="op">=</span><span class="st">"700"</span><span class="ot"> style</span><span class="op">=</span><span class="st">"border:0"</span><span class="dt">&gt;&lt;/</span><span class="kw">iframe</span><span class="dt">&gt;</span></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;/</span><span class="kw">div</span><span class="dt">&gt;</span></span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&lt;/</span><span class="kw">div</span><span class="dt">&gt;</span></span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&lt;</span><span class="kw">script</span><span class="dt">&gt;</span></span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>    <span class="kw">async</span> <span class="kw">function</span> <span class="fu">getFrontendUrl</span>() {</span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>      <span class="kw">const</span> res <span class="op">=</span> <span class="cf">await</span> <span class="fu">fetch</span>(<span class="st">'/api/locimapper/launch'</span><span class="op">,</span> { <span class="dt">method</span><span class="op">:</span> <span class="st">'POST'</span> })<span class="op">;</span></span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>      <span class="kw">const</span> { frontend_url } <span class="op">=</span> <span class="cf">await</span> res<span class="op">.</span><span class="fu">json</span>()<span class="op">;</span></span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>      <span class="cf">return</span> frontend_url<span class="op">;</span></span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>    }</span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>    <span class="kw">function</span> <span class="fu">openModal</span>(url) {</span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>      <span class="bu">document</span><span class="op">.</span><span class="fu">getElementById</span>(<span class="st">'lm-frame'</span>)<span class="op">.</span><span class="at">src</span> <span class="op">=</span> url<span class="op">;</span></span>
-<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>      <span class="bu">document</span><span class="op">.</span><span class="fu">getElementById</span>(<span class="st">'backdrop'</span>)<span class="op">.</span><span class="at">style</span><span class="op">.</span><span class="at">display</span> <span class="op">=</span> <span class="st">'flex'</span><span class="op">;</span></span>
-<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>    }</span>
-<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>    <span class="kw">function</span> <span class="fu">closeModal</span>() {</span>
-<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>      <span class="bu">document</span><span class="op">.</span><span class="fu">getElementById</span>(<span class="st">'lm-frame'</span>)<span class="op">.</span><span class="at">src</span> <span class="op">=</span> <span class="st">'about:blank'</span><span class="op">;</span></span>
-<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>      <span class="bu">document</span><span class="op">.</span><span class="fu">getElementById</span>(<span class="st">'backdrop'</span>)<span class="op">.</span><span class="at">style</span><span class="op">.</span><span class="at">display</span> <span class="op">=</span> <span class="st">'none'</span><span class="op">;</span></span>
-<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>    }</span>
-<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>    <span class="bu">document</span><span class="op">.</span><span class="fu">getElementById</span>(<span class="st">'open'</span>)<span class="op">.</span><span class="at">onclick</span> <span class="op">=</span> <span class="kw">async</span> () <span class="kw">=&gt;</span> <span class="fu">openModal</span>(<span class="cf">await</span> <span class="fu">getFrontendUrl</span>())<span class="op">;</span></span>
-<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&lt;/</span><span class="kw">script</span><span class="dt">&gt;</span></span>
-<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">body</span><span class="dt">&gt;</span></span>
-<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">html</span><span class="dt">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;!doctype</span> html<span class="dt">&gt;</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">html</span><span class="dt">&gt;</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">body</span><span class="dt">&gt;</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&lt;</span><span class="kw">button</span><span class="ot"> id</span><span class="op">=</span><span class="st">"open"</span><span class="dt">&gt;</span>Open Import<span class="dt">&lt;/</span><span class="kw">button</span><span class="dt">&gt;</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&lt;</span><span class="kw">div</span><span class="ot"> id</span><span class="op">=</span><span class="st">"backdrop"</span><span class="ot"> style</span><span class="op">=</span><span class="st">"display:none;position:fixed;inset:0;background:rgba(0,0,0,.4);align-items:center;justify-content:center;"</span><span class="dt">&gt;</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">div</span><span class="ot"> style</span><span class="op">=</span><span class="st">"background:#fff;position:relative;padding:8px;border-radius:8px;"</span><span class="dt">&gt;</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>      <span class="dt">&lt;</span><span class="kw">button</span><span class="ot"> onclick</span><span class="op">=</span><span class="st">"closeModal()"</span><span class="ot"> style</span><span class="op">=</span><span class="st">"position:absolute;top:8px;right:8px;"</span><span class="dt">&gt;</span>✕<span class="dt">&lt;/</span><span class="kw">button</span><span class="dt">&gt;</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&lt;</span><span class="kw">iframe</span><span class="ot"> id</span><span class="op">=</span><span class="st">"lm-frame"</span><span class="ot"> width</span><span class="op">=</span><span class="st">"900"</span><span class="ot"> height</span><span class="op">=</span><span class="st">"700"</span><span class="ot"> style</span><span class="op">=</span><span class="st">"border:0"</span><span class="ot"> sandbox</span><span class="op">=</span><span class="st">"allow-scripts allow-top-navigation-by-user-activation"</span><span class="dt">&gt;&lt;/</span><span class="kw">iframe</span><span class="dt">&gt;</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;/</span><span class="kw">div</span><span class="dt">&gt;</span></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&lt;/</span><span class="kw">div</span><span class="dt">&gt;</span></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&lt;</span><span class="kw">script</span><span class="dt">&gt;</span></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>    <span class="kw">async</span> <span class="kw">function</span> <span class="fu">getFrontendUrl</span>() {</span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>      <span class="kw">const</span> res <span class="op">=</span> <span class="cf">await</span> <span class="fu">fetch</span>(<span class="st">'/api/locimapper/launch'</span><span class="op">,</span> { <span class="dt">method</span><span class="op">:</span> <span class="st">'POST'</span> })<span class="op">;</span></span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>      <span class="kw">const</span> { frontend_url } <span class="op">=</span> <span class="cf">await</span> res<span class="op">.</span><span class="fu">json</span>()<span class="op">;</span></span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>      <span class="cf">return</span> frontend_url<span class="op">;</span></span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>    <span class="kw">function</span> <span class="fu">openModal</span>(url) {</span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>      <span class="bu">document</span><span class="op">.</span><span class="fu">getElementById</span>(<span class="st">'lm-frame'</span>)<span class="op">.</span><span class="at">src</span> <span class="op">=</span> url<span class="op">;</span></span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>      <span class="bu">document</span><span class="op">.</span><span class="fu">getElementById</span>(<span class="st">'backdrop'</span>)<span class="op">.</span><span class="at">style</span><span class="op">.</span><span class="at">display</span> <span class="op">=</span> <span class="st">'flex'</span><span class="op">;</span></span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>    <span class="kw">function</span> <span class="fu">closeModal</span>() {</span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a>      <span class="bu">document</span><span class="op">.</span><span class="fu">getElementById</span>(<span class="st">'lm-frame'</span>)<span class="op">.</span><span class="at">src</span> <span class="op">=</span> <span class="st">'about:blank'</span><span class="op">;</span></span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a>      <span class="bu">document</span><span class="op">.</span><span class="fu">getElementById</span>(<span class="st">'backdrop'</span>)<span class="op">.</span><span class="at">style</span><span class="op">.</span><span class="at">display</span> <span class="op">=</span> <span class="st">'none'</span><span class="op">;</span></span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a>    <span class="bu">document</span><span class="op">.</span><span class="fu">getElementById</span>(<span class="st">'open'</span>)<span class="op">.</span><span class="at">onclick</span> <span class="op">=</span> <span class="kw">async</span> () <span class="kw">=&gt;</span> <span class="fu">openModal</span>(<span class="cf">await</span> <span class="fu">getFrontendUrl</span>())<span class="op">;</span></span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&lt;/</span><span class="kw">script</span><span class="dt">&gt;</span></span>
+<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">body</span><span class="dt">&gt;</span></span>
+<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">html</span><span class="dt">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Recommended size:</strong> <code>{ w: 900, h: 700 }</code></p>
+</div>
+</div>
 
 
 </section>

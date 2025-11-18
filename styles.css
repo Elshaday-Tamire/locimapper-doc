@@ -3,3 +3,24 @@
   background: #0f1116;
 }
 img, iframe { max-width: 100%; }
+
+/* Fix duplicate hamburger / distorted header on small screens */
+@media (max-width: 767.98px) {
+  /* Hide the bootstrap navbar toggler — Quarto already shows a separate sidebar toggle */
+  .navbar-toggler { display: none !important; }
+
+  /* Keep brand aligned to the left on small screens so it doesn't overlap controls */
+  .navbar-brand-container.mx-auto { justify-content: flex-start; margin-left: 0.5rem; }
+
+  /* Slightly reduce brand title size on very small viewports */
+  .navbar-brand .navbar-title { font-size: 0.95rem; }
+}
+
+/* Hide duplicate search icon on small screens (keep a single search control) */
+@media (max-width: 767.98px) {
+  /* Hide the secondary nav search button (the small icon near breadcrumb) */
+  .quarto-secondary-nav .quarto-search-button { display: none !important; }
+
+  /* Also hide the navbar inline search placeholder if it appears duplicated */
+  #quarto-header #quarto-search { display: inline-flex !important; }
+}

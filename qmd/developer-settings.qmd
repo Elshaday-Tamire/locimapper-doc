@@ -1,6 +1,6 @@
 ## Create an App Credentials
 
-After logging in at [locimapper.com](https://locimapper.com), you can create an application credential that connects your system to the Locimapper platform.
+After logging in at [locimapper.com](https://app.locimapper.com), you can create an application credential that connects your system to the Locimapper platform.
 
 1. Go to **Side menu → Developer Settings**  
 

@@ -4,7 +4,7 @@ Your backend calls this endpoint to receive a **single-use, short-lived** URL fo
 
 ### Endpoint
 ```json
-POST https://locimapper.com:8443/accounts/integrations/launch
+POST https://app.locimapper.com/api/accounts/integrations/launch
 ```
 
 ### Request (JSON)
@@ -51,13 +51,13 @@ For more usage examples and responses, see the examples later in this page.
 ### Successful Response (200)
 ```json
 {
-  "frontend_url": "https://locimapper.com/import-standalone#<short-lived-token>"
+  "frontend_url": "https://app.locimapper.com/import-standalone#<short-lived-token>"
 }
 ```
 
 ### Sample cURL
 ```bash
-curl -X POST https://locimapper.com:8443/accounts/integrations/launch   
+curl -X POST https://app.locimapper.com/api/accounts/integrations/launch   
      -H "Content-Type: application/json"   
      -d '{
           "client_id":"YOUR_CLIENT_ID",

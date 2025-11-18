@@ -8,8 +8,6 @@ website:
   navbar:
     logo: images/logo.png
     right:
-      - text: "GitHub"
-        href: https://github.com/Elshaday-Tamire
       - icon: sun
         href: "#"
         aria-label: "Appearance"

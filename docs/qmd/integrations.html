@@ -64,7 +64,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../images/favicon.png" rel="icon" type="image/png">
+<link href="../images/favicon.ico" rel="icon">
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -104,6 +104,47 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   }
 }</script>
 <style>html{ scroll-behavior: smooth; }</style>
+<!-- Global SEO, Open Graph, Twitter Card, and JSON-LD -->
+<meta name="description" content="Developer docs for Locimapper — integration, embedding and API reference.">
+<meta name="keywords" content="Locimapper, import, validation, integration, API, embedding, developer docs">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://docs.locimapper.com">
+<link rel="sitemap" type="application/xml" title="Sitemap" href="https://docs.locimapper.com/sitemap.xml">
+
+<!-- Icons -->
+<link rel="apple-touch-icon" sizes="180x180" href="../images/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../images/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../images/favicon-16.png">
+<link rel="manifest" href="../images/site.webmanifest">
+<link rel="mask-icon" href="../images/branding.png" color="#5bbad5">
+
+<!-- Open Graph -->
+<meta property="og:site_name" content="Locimapper Developer Docs">
+<meta property="og:title" content="Locimapper Developer Docs">
+<meta property="og:description" content="Developer docs for Locimapper — integration, embedding and API reference.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://docs.locimapper.com">
+<meta property="og:image" content="https://docs.locimapper.com/images/logo.png">
+<meta property="og:image:alt" content="Locimapper branding">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Locimapper Developer Docs">
+<meta name="twitter:description" content="Developer docs for Locimapper — integration, embedding and API reference.">
+<meta name="twitter:image" content="https://docs.locimapper.com/images/icon-512.png">
+<meta name="twitter:image:alt" content="Locimapper branding">
+
+<!-- JSON-LD structured data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "url": "https://docs.locimapper.com",
+  "name": "Locimapper Developer Docs",
+  "description": "Developer docs for Locimapper — integration, embedding and API reference."
+}
+</script>
+
 <script>
   document.addEventListener("DOMContentLoaded", () => {
     const btn = document.querySelector('a[aria-label="Appearance"]');
@@ -373,7 +414,7 @@ Tip
 <h2 class="anchored" data-anchor-id="post-import-redirect">Post-Import Redirect</h2>
 <p>After users complete their import or validation process, Locimapper automatically redirects the browser to the configured <strong>Redirect URL</strong> and appends a <code>status</code> query parameter to indicate the result.</p>
 <p><strong>Example</strong></p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode json code-with-copy"><code class="sourceCode json"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="er">https://yourapp.com/oauth/callback?status=200</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode json code-with-copy"><code class="sourceCode json"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="er">https://yourapp.com/oauth/callback?status_code=200</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <blockquote class="blockquote">
 <p>You can use this status code in your backend to confirm a successful submission or handle errors gracefully.</p>
 </blockquote>
@@ -618,7 +659,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp('/' + window.location.host + '/');
+      var filterRegex = new RegExp("https:\/\/docs\.locimapper\.com");
     var isInternal = (href) => {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }

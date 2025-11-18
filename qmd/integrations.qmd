@@ -81,7 +81,7 @@ After users complete their import or validation process, Locimapper automaticall
 
 **Example**
 ```json
-https://yourapp.com/oauth/callback?status=200
+https://yourapp.com/oauth/callback?status_code=200
 ```
 
 > You can use this status code in your backend to confirm a successful submission or handle errors gracefully.

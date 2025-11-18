@@ -1,0 +1,1 @@
+Sitemap: https://docs.locimapper.com/sitemap.xml

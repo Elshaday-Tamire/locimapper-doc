@@ -46,7 +46,7 @@
     "href": "qmd/integrations.html#post-import-redirect",
     "title": "Locimapper Developer Docs",
     "section": "Post-Import Redirect",
-    "text": "Post-Import Redirect\nAfter users complete their import or validation process, Locimapper automatically redirects the browser to the configured Redirect URL and appends a status query parameter to indicate the result.\nExample\nhttps://yourapp.com/oauth/callback?status=200\n\nYou can use this status code in your backend to confirm a successful submission or handle errors gracefully.",
+    "text": "Post-Import Redirect\nAfter users complete their import or validation process, Locimapper automatically redirects the browser to the configured Redirect URL and appends a status query parameter to indicate the result.\nExample\nhttps://yourapp.com/oauth/callback?status_code=200\n\nYou can use this status code in your backend to confirm a successful submission or handle errors gracefully.",
     "crumbs": [
       "Setup",
       "Create an Integration"
@@ -79,7 +79,7 @@
     "href": "qmd/developer-settings.html",
     "title": "Locimapper Developer Docs",
     "section": "",
-    "text": "After logging in at locimapper.com, you can create an application credential that connects your system to the Locimapper platform.\n\nGo to Side menu → Developer Settings\nUnder Credentials tab click Create credential to create a new application.\nConfigure Branding to match your product’s style and colors.\nThis makes your hosted import and validation pages look native.\n\n\n\n\n\n\nTo help you understand how each color applies within the modal, the following illustration highlights each color zone.\n\n\n\n\n\n\n\n\n\n\n\nTip\n\n\n\nRotate your Client Secret regularly or whenever you suspect a leak.",
+    "text": "After logging in at locimapper, you can create an application credential that connects your system to the Locimapper platform.\n\nGo to Side menu → Developer Settings\nUnder Credentials tab click Create credential to create a new application.\nConfigure Branding to match your product’s style and colors.\nThis makes your hosted import and validation pages look native.\n\n\n\n\n\n\nTo help you understand how each color applies within the modal, the following illustration highlights each color zone.\n\n\n\n\n\n\n\n\n\n\n\nTip\n\n\n\nRotate your Client Secret regularly or whenever you suspect a leak.",
     "crumbs": [
       "Setup",
       "Create an App Credentials"
@@ -90,7 +90,7 @@
     "href": "qmd/developer-settings.html#create-an-app-credentials",
     "title": "Locimapper Developer Docs",
     "section": "",
-    "text": "After logging in at locimapper.com, you can create an application credential that connects your system to the Locimapper platform.\n\nGo to Side menu → Developer Settings\nUnder Credentials tab click Create credential to create a new application.\nConfigure Branding to match your product’s style and colors.\nThis makes your hosted import and validation pages look native.\n\n\n\n\n\n\nTo help you understand how each color applies within the modal, the following illustration highlights each color zone.\n\n\n\n\n\n\n\n\n\n\n\nTip\n\n\n\nRotate your Client Secret regularly or whenever you suspect a leak.",
+    "text": "After logging in at locimapper, you can create an application credential that connects your system to the Locimapper platform.\n\nGo to Side menu → Developer Settings\nUnder Credentials tab click Create credential to create a new application.\nConfigure Branding to match your product’s style and colors.\nThis makes your hosted import and validation pages look native.\n\n\n\n\n\n\nTo help you understand how each color applies within the modal, the following illustration highlights each color zone.\n\n\n\n\n\n\n\n\n\n\n\nTip\n\n\n\nRotate your Client Secret regularly or whenever you suspect a leak.",
     "crumbs": [
       "Setup",
       "Create an App Credentials"

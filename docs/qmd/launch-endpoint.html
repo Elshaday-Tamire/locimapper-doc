@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>launch-endpoint – Locimapper Developer Docs</title>
+<title>launch-endpoint – SmartSchema Developer Docs</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -105,11 +105,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }</script>
 <style>html{ scroll-behavior: smooth; }</style>
 <!-- Global SEO, Open Graph, Twitter Card, and JSON-LD -->
-<meta name="description" content="Developer docs for Locimapper — integration, embedding and API reference.">
-<meta name="keywords" content="Locimapper, import, validation, integration, API, embedding, developer docs">
+<meta name="description" content="Developer docs for SmartSchema — integration, embedding and API reference.">
+<meta name="keywords" content="SmartSchema, import, validation, integration, API, embedding, developer docs">
 <meta name="robots" content="index,follow">
-<link rel="canonical" href="https://docs.locimapper.com">
-<link rel="sitemap" type="application/xml" title="Sitemap" href="https://docs.locimapper.com/sitemap.xml">
+<link rel="canonical" href="https://docs.smartschema.io">
+<link rel="sitemap" type="application/xml" title="Sitemap" href="https://docs.smartschema.io/sitemap.xml">
 
 <!-- Icons -->
 <link rel="apple-touch-icon" sizes="180x180" href="../images/apple-touch-icon.png">
@@ -119,29 +119,29 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link rel="mask-icon" href="../images/branding.png" color="#5bbad5">
 
 <!-- Open Graph -->
-<meta property="og:site_name" content="Locimapper Developer Docs">
-<meta property="og:title" content="Locimapper Developer Docs">
-<meta property="og:description" content="Developer docs for Locimapper — integration, embedding and API reference.">
+<meta property="og:site_name" content="SmartSchema Developer Docs">
+<meta property="og:title" content="SmartSchema Developer Docs">
+<meta property="og:description" content="Developer docs for SmartSchema — integration, embedding and API reference.">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://docs.locimapper.com">
-<meta property="og:image" content="https://docs.locimapper.com/images/logo.png">
-<meta property="og:image:alt" content="Locimapper branding">
+<meta property="og:url" content="https://docs.smartschema.io">
+<meta property="og:image" content="https://docs.smartschema.io/images/logo.png">
+<meta property="og:image:alt" content="SmartSchema branding">
 
 <!-- Twitter -->
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Locimapper Developer Docs">
-<meta name="twitter:description" content="Developer docs for Locimapper — integration, embedding and API reference.">
-<meta name="twitter:image" content="https://docs.locimapper.com/images/icon-512.png">
-<meta name="twitter:image:alt" content="Locimapper branding">
+<meta name="twitter:title" content="SmartSchema Developer Docs">
+<meta name="twitter:description" content="Developer docs for SmartSchema — integration, embedding and API reference.">
+<meta name="twitter:image" content="https://docs.smartschema.io/images/icon-512.png">
+<meta name="twitter:image:alt" content="SmartSchema branding">
 
 <!-- JSON-LD structured data -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "WebSite",
-  "url": "https://docs.locimapper.com",
-  "name": "Locimapper Developer Docs",
-  "description": "Developer docs for Locimapper — integration, embedding and API reference."
+  "url": "https://docs.smartschema.io",
+  "name": "SmartSchema Developer Docs",
+  "description": "Developer docs for SmartSchema — integration, embedding and API reference."
 }
 </script>
 
@@ -176,7 +176,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <img src="../images/logo.png" alt="" class="navbar-logo">
     </a>
     <a class="navbar-brand" href="../index.html">
-    <span class="navbar-title">Locimapper Developer Docs</span>
+    <span class="navbar-title">SmartSchema Developer Docs</span>
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
@@ -322,7 +322,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Your backend calls this endpoint to receive a <strong>single-use, short-lived</strong> URL for the hosted Import/Validator page.</p>
 <section id="endpoint" class="level3">
 <h3 class="anchored" data-anchor-id="endpoint">Endpoint</h3>
-<div class="sourceCode" id="cb1"><pre class="sourceCode json code-with-copy"><code class="sourceCode json"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="er">POST</span> <span class="er">https://app.locimapper.com/api/accounts/integrations/launch</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode json code-with-copy"><code class="sourceCode json"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="er">POST</span> <span class="er">https://app.smartschema.io/api/accounts/integrations/launch</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="request-json" class="level3">
 <h3 class="anchored" data-anchor-id="request-json">Request (JSON)</h3>
@@ -361,12 +361,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="successful-response-200" class="level3">
 <h3 class="anchored" data-anchor-id="successful-response-200">Successful Response (200)</h3>
 <div class="sourceCode" id="cb4"><pre class="sourceCode json code-with-copy"><code class="sourceCode json"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">{</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="dt">"frontend_url"</span><span class="fu">:</span> <span class="st">"https://app.locimapper.com/import-standalone#&lt;short-lived-token&gt;"</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="dt">"frontend_url"</span><span class="fu">:</span> <span class="st">"https://app.smartschema.io/import-standalone#&lt;short-lived-token&gt;"</span></span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="fu">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="sample-curl" class="level3">
 <h3 class="anchored" data-anchor-id="sample-curl">Sample cURL</h3>
-<div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">curl</span> <span class="at">-X</span> POST https://app.locimapper.com/api/accounts/integrations/launch   </span>
+<div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">curl</span> <span class="at">-X</span> POST https://app.smartschema.io/api/accounts/integrations/launch   </span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>     <span class="ex">-H</span> <span class="st">"Content-Type: application/json"</span>   </span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>     <span class="ex">-d</span> <span class="st">'{</span></span>
 <span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="st">          "client_id":"YOUR_CLIENT_ID",</span></span>
@@ -615,7 +615,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp("https:\/\/docs\.locimapper\.com");
+      var filterRegex = new RegExp("https:\/\/docs\.smartschema\.io");
     var isInternal = (href) => {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }

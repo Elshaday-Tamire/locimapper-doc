@@ -1,24 +1,24 @@
-## What is Locimapper?
+## What is SmartSchema?
 
-Locimapper is a pluggable data mapping and validation platform that allows organizations to integrate a hosted Import and Validation experience directly within their own applications. It provides a secure, branded, and intuitive interface for uploading, mapping, and validating data before it enters your system without requiring you to build those complex workflows yourself.
+SmartSchema is a pluggable data mapping and validation platform that allows organizations to integrate a hosted Import and Validation experience directly within their own applications. It provides a secure, branded, and intuitive interface for uploading, mapping, and validating data before it enters your system without requiring you to build those complex workflows yourself.
 
 ### How It Works
 
-Locimapper is designed to be modular and integration-friendly. Developers can connect their applications through APIs and launch a fully hosted mapping and validation page. Users can then review, match, and validate their data through a guided process, and Locimapper automatically returns clean, structured data back to your application.
+SmartSchema is designed to be modular and integration-friendly. Developers can connect their applications through APIs and launch a fully hosted mapping and validation page. Users can then review, match, and validate their data through a guided process, and SmartSchema automatically returns clean, structured data back to your application.
 
 ### Typical Flow
 
 1. In Developer Settings, create an application to obtain your Client ID and Client Secret.  
-2. Set up an Integration, which defines how Locimapper will interact with your data schema and redirect settings.  
-3. From your backend, send a launch request to Locimapper to generate a session link.  
+2. Set up an Integration, which defines how SmartSchema will interact with your data schema and redirect settings.  
+3. From your backend, send a launch request to SmartSchema to generate a session link.  
 4. Open the returned frontend URL inside your product, for example, within a 900×700 pixel modal window or a dedicated page.  
-5. After your users complete the mapping and validation process, Locimapper securely redirects them back to your configured redirect URL with a status code and relevant metadata.
+5. After your users complete the mapping and validation process, SmartSchema securely redirects them back to your configured redirect URL with a status code and relevant metadata.
 
 > For a complete walkthrough, see Embedding & APIs → Modal Embed.
 
-### Why Locimapper?
+### Why SmartSchema?
 
-Locimapper simplifies the most complex parts of data onboarding and validation through features such as:
+SmartSchema simplifies the most complex parts of data onboarding and validation through features such as:
 
 - AI-powered column mapping that intelligently matches uploaded file columns with your internal schema.  
 - Custom validation rules to enforce data type, range, uniqueness, and required field constraints.  

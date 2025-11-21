@@ -1,7 +1,7 @@
 {
-  "name": "Locimapper",
-  "short_name": "Locimapper",
-  "description": "Locimapper - hosted mapping and validation UI for data imports",
+  "name": "SmartSchema",
+  "short_name": "SmartSchema",
+  "description": "SmartSchema - hosted mapping and validation UI for data imports",
   "start_url": "/",
   "scope": "/",
   "display": "standalone",

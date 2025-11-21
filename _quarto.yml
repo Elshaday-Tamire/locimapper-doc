@@ -3,11 +3,11 @@ project:
   output-dir: docs
 
 website:
-  title: "Locimapper Developer Docs"
+  title: "SmartSchema Developer Docs"
   # Published site URL (no trailing slash)
-  site-url: "https://docs.locimapper.com"
+  site-url: "https://docs.smartschema.io"
   # Short site description used for SEO (override per-page in frontmatter if desired)
-  description: "Developer docs for Locimapper — integration, embedding and API reference."
+  description: "Developer docs for SmartSchema — integration, embedding and API reference."
   # Use provided favicons / icons (favicon.ico preferred for broad support)
   favicon: images/favicon.ico
   navbar:
@@ -50,11 +50,11 @@ format:
     include-in-header:
       text: |
         <!-- Global SEO, Open Graph, Twitter Card, and JSON-LD -->
-        <meta name="description" content="Developer docs for Locimapper — integration, embedding and API reference.">
-        <meta name="keywords" content="Locimapper, import, validation, integration, API, embedding, developer docs">
+        <meta name="description" content="Developer docs for SmartSchema — integration, embedding and API reference.">
+        <meta name="keywords" content="SmartSchema, import, validation, integration, API, embedding, developer docs">
         <meta name="robots" content="index,follow">
-        <link rel="canonical" href="https://docs.locimapper.com">
-        <link rel="sitemap" type="application/xml" title="Sitemap" href="https://docs.locimapper.com/sitemap.xml">
+        <link rel="canonical" href="https://docs.smartschema.io">
+        <link rel="sitemap" type="application/xml" title="Sitemap" href="https://docs.smartschema.io/sitemap.xml">
 
         <!-- Icons -->
         <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
@@ -64,29 +64,29 @@ format:
         <link rel="mask-icon" href="/images/branding.png" color="#5bbad5">
 
         <!-- Open Graph -->
-        <meta property="og:site_name" content="Locimapper Developer Docs">
-        <meta property="og:title" content="Locimapper Developer Docs">
-        <meta property="og:description" content="Developer docs for Locimapper — integration, embedding and API reference.">
+        <meta property="og:site_name" content="SmartSchema Developer Docs">
+        <meta property="og:title" content="SmartSchema Developer Docs">
+        <meta property="og:description" content="Developer docs for SmartSchema — integration, embedding and API reference.">
         <meta property="og:type" content="website">
-        <meta property="og:url" content="https://docs.locimapper.com">
-        <meta property="og:image" content="https://docs.locimapper.com/images/logo.png">
-        <meta property="og:image:alt" content="Locimapper branding">
+        <meta property="og:url" content="https://docs.smartschema.io">
+        <meta property="og:image" content="https://docs.smartschema.io/images/logo.png">
+        <meta property="og:image:alt" content="SmartSchema branding">
 
         <!-- Twitter -->
         <meta name="twitter:card" content="summary_large_image">
-        <meta name="twitter:title" content="Locimapper Developer Docs">
-        <meta name="twitter:description" content="Developer docs for Locimapper — integration, embedding and API reference.">
-        <meta name="twitter:image" content="https://docs.locimapper.com/images/icon-512.png">
-        <meta name="twitter:image:alt" content="Locimapper branding">
+        <meta name="twitter:title" content="SmartSchema Developer Docs">
+        <meta name="twitter:description" content="Developer docs for SmartSchema — integration, embedding and API reference.">
+        <meta name="twitter:image" content="https://docs.smartschema.io/images/icon-512.png">
+        <meta name="twitter:image:alt" content="SmartSchema branding">
 
         <!-- JSON-LD structured data -->
         <script type="application/ld+json">
         {
           "@context": "https://schema.org",
           "@type": "WebSite",
-          "url": "https://docs.locimapper.com",
-          "name": "Locimapper Developer Docs",
-          "description": "Developer docs for Locimapper — integration, embedding and API reference."
+          "url": "https://docs.smartschema.io",
+          "name": "SmartSchema Developer Docs",
+          "description": "Developer docs for SmartSchema — integration, embedding and API reference."
         }
         </script>
 

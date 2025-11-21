@@ -1,6 +1,6 @@
 ## Create an Integration
 
-From the **Developer Settings → Integrations** tab, click **New Integration** to connect Locimapper with an external API or service.  
+From the **Developer Settings → Integrations** tab, click **New Integration** to connect SmartSchema with an external API or service.  
 You’ll be guided through three configuration steps: **Basic**, **Settings**, and **Behavior**.
 
 ---
@@ -8,7 +8,7 @@ You’ll be guided through three configuration steps: **Basic**, **Settings**, a
 ### Step 1: Basic Configuration
 ![](../images/integration-basic.png){fig-align="center" width="750"}
 
-1. Select an **App** from your existing Locimapper applications.  
+1. Select an **App** from your existing SmartSchema applications.  
 2. Enter a descriptive **Integration Name** (for example, “Salesforce Import”).  
 3. Optionally add a **Description** to explain the purpose of this integration.  
 4. Choose a **Schema** to define the data structure this integration supports.  
@@ -19,7 +19,7 @@ You’ll be guided through three configuration steps: **Basic**, **Settings**, a
 ### Step 2: API Settings
 ![](../images/integration-settings.png){fig-align="center" width="750"}
 
-In this step, you configure how Locimapper sends validated data to your external service.
+In this step, you configure how SmartSchema sends validated data to your external service.
 
 1. **API Endpoint** — Enter the destination URL where the data should be delivered.  
    Example:  
@@ -29,7 +29,7 @@ In this step, you configure how Locimapper sends validated data to your external
 
 2. **API Headers** — (optional) Add authentication and content-type headers that your endpoint requires. If your headers include dynamic values (for example per-user Authorization tokens), prefer leaving them out of the static integration and supply them at launch time using the Launch API `overrides` (use the `api_header` object to replace headers for a single launch). See the Launch Endpoint docs for details: [Launch Endpoint](../qmd/launch-endpoint.html#launch-endpoint).
 
-3. **Example JSON Request Body** — Once a schema is selected, Locimapper automatically displays a sample JSON payload showing the structure of validated data that will be sent to your API.
+3. **Example JSON Request Body** — Once a schema is selected, SmartSchema automatically displays a sample JSON payload showing the structure of validated data that will be sent to your API.
 
 4. **HTTP Method** — Choose the method your endpoint expects, such as `POST` or `PUT`.
 
@@ -59,7 +59,7 @@ Rules & tips
 
 To learn how to include `overrides` in the launch request and the exact validation rules, see the Launch Endpoint documentation: [Launch Endpoint](../qmd/launch-endpoint.html#launch-endpoint).
 :::
-> These settings define the connection between Locimapper’s data validator and your backend service, ensuring data is transmitted securely and in the expected format.
+> These settings define the connection between SmartSchema’s data validator and your backend service, ensuring data is transmitted securely and in the expected format.
 
 ---
 
@@ -77,7 +77,7 @@ This setting provides flexibility depending on whether complete data integrity o
 
 ## Post-Import Redirect
 
-After users complete their import or validation process, Locimapper automatically redirects the browser to the configured **Redirect URL** and appends a `status` query parameter to indicate the result.
+After users complete their import or validation process, SmartSchema automatically redirects the browser to the configured **Redirect URL** and appends a `status` query parameter to indicate the result.
 
 **Example**
 ```json

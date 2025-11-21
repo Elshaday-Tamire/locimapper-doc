@@ -1,4 +1,4 @@
-# Locimapper Docs (Quarto)
+# SmartSchema Docs (Quarto)
 Run locally:
 
 ```bash

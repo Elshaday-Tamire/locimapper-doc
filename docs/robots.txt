@@ -1,1 +1,1 @@
-Sitemap: https://docs.locimapper.com/sitemap.xml
+Sitemap: https://docs.smartschema.io/sitemap.xml

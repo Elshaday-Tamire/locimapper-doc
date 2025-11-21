@@ -30,7 +30,7 @@ Don't forget to include the sandbox attribute (sandbox="allow-scripts allow-top-
 
   <script>
     async function getFrontendUrl() {
-      const res = await fetch('/api/locimapper/launch', { method: 'POST' });
+      const res = await fetch('/api/accounts/integrations/launch', { method: 'POST' });
       const { frontend_url } = await res.json();
       return frontend_url;
     }
